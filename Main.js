@@ -1,13 +1,13 @@
-const Express = require("Express");
-const app = Express();
-const handlebars = require("Express-handlebars");
+const express = require("express");
+const app = express();
+const handlebars = require("express-handlebars");
 const dietRoutes = require("./Routes/diet_routes");
 const mealsRoutes = require("./Routes/meals_routes");
 const userRoutes = require("./Routes/user_routes");
 const path = require("path");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-const session = require("Express-session");
+const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 require("./config/auth")(passport);
@@ -35,9 +35,9 @@ app.use((req, res, next) => {
 
 app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-app.use(Express.urlencoded({ extended: true }));
-app.use(Express.json());
-app.use(Express.static(path.join(__dirname, "Public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "Public")));
 
 mongoose
 	.connect(database.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
