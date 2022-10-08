@@ -1,0 +1,49 @@
+<section class="py-3 text-center container">
+	<div class="row py-lg-2">
+		<div class="col-lg-6 col-md-8 mx-auto">
+			<h1>Suas comidas</h1>
+			<p class="lead text-muted">Aqui você poderá visualizar e gerenciar as comidas que cadastrou, com direito a descrições e informações
+				nutricionais. Divirta-se ;)
+			</p>
+			<p>
+				<a href="/alimentos/registro" class="btn btn-primary my-2">Cadastrar novo alimento</a>
+			</p>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row mb-3 text-center justify-content-center">
+		{{#each meal}}
+			<div class="col-md-3 col-12 card me-md-3 mt-3" style="width: 18rem;">
+				<div class="card-header">
+					<h5 class="card-title">{{this.name}}</h5>
+				</div>
+				<div class="card-body">
+					<h6 class="card-subtitle mb-2 text-muted">{{this.amount}}</h6>
+					<p class="card-text">{{this.info}}</p>
+					<br />
+				</div>
+				<div class="card-footer">
+					<a href="/alimentos/editar/{{name}}"><button class="btn btn-warning"><svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-pencil-fill"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+								></path>
+							</svg>
+							Editar
+						</button></a>
+					<a href="/alimentos/deletar/{{_id}}"><button class="btn btn-danger">Deletar</button></a>
+				</div>
+			</div>
+		{{else}}
+			<h3 class="text-center"> Não há nada registrado.</h3>
+		{{/each}}
+	</div>
+</div>

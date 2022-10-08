@@ -1,0 +1,27 @@
+<style>
+	body { align-items: center; padding-bottom: 40px; } .form-signin { padding-top: 40px; max-width: 200px; padding: 15px; } .form-signin
+	.form-floating:focus-within { z-index: 2; } .form-signin input[type="email"] { margin-bottom: -1px; border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0; } .form-signin input[type="password"] { margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius:
+	0; }
+</style>
+{{#each errs}}
+	<div class="alert alert-danger">{{text}}</div>
+{{/each}}
+
+<main class="form-signin w-100 m-auto text-center border rounded-3 bg-dark">
+	<form class="p-2 p-md-3" action="/user/login" method="post">
+		<h1 class="h3 mb-3 fw-bold lh-1 text-light">Login</h1>
+
+		<div class="form-floating mb-3">
+			<input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+			<label for="floatingInput">E-mail</label>
+		</div>
+		<div class="form-floating">
+			<input type="password" name="passwd" class="form-control" id="floatingPassword" placeholder="Senha" />
+			<label for="floatingPassword">Senha</label>
+		</div>
+
+		<button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+	</form>
+	<p class="text-light"> <i> Ainda não tem uma conta?</i> <a href="/user/register"> Crie uma agora! </a></p>
+</main>

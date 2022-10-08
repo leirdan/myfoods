@@ -1,0 +1,49 @@
+{{#each errs}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<h3 class="text-center mb-4"> Adicionando um horário </h3>
+<form action="/dieta/criar-dieta/sucesso" method="POST">
+	<div class="row mb-3">
+		<label for="name" class="col-sm-2 col-form-label">Defina um nome</label>
+		<div class="col-sm-10">
+			<input type="text" name="name" class="form-control" id="name"
+				placeholder="Ex.: café da manhã, lanche 1, etc.">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label for="schedule" class="col-xxl-2 col-form-label">Defina o horário </span>
+		<div class="input-group mb-3 col-xxl-10">
+				<input type="text" name="hour" class="form-control" placeholder="Hora" aria-label="hour">
+				<span class="input-group-text">:</span>
+				<input type="text" name="minutes" class="form-control" placeholder="Minutos" aria-label="minutes">
+		</div>
+	</div>
+	<fieldset class="row mb-3">
+		<legend class="col-form-label col-sm-2 pt-0">Escolha suas opções:</legend>
+		{{#each meal}}
+		<div class="col-sm-10">
+			<div class="form-check">
+				<input class="form-check-input" name="optionMeal" type="checkbox" value="{{_id}}" id="flexCheckDefault">
+				<label class="form-check-label" for="flexCheckDefault">
+					{{name}}
+				</label>
+			</div>
+			{{else}}
+			<input class="form-check-input" type="checkbox" value="0" id="flexCheckDisabled" checked>
+			<label class="form-check-label" for="flexCheckDisabled">
+				Nenhuma refeição cadastrada.
+			</label>
+			
+			{{/each}}
+	</fieldset>
+	<div class="row mb-3">
+		<label for="notes" class="col-sm-2 col-form-label">Observações importantes</label>
+		<div class="col-sm-10">
+			<input name="notes" type="text" class="form-control" id="notes">
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Adicionar</button>
+</form>

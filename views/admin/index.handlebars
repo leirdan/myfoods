@@ -1,0 +1,16 @@
+<main>
+	{{#if user}}
+		<h1 class="text-center">Bem vindo ao seu site, {{user.username}}.</h1>
+	{{/if}}
+	<h5 class="text-center mt-3">Escolha o que quer fazer aqui:</h5>
+	<div class="container mt-3">
+		<div class="row text-center">
+			<div class="col-md-6 mt-2 mb-2">
+				<a href="/alimentos/"><button class="btn btn-primary"> Ir para seus alimentos </button></a>
+			</div>
+			<div class="col-md-6 mt-2 mb-2">
+				<a href="/dieta/"><button class="btn btn-warning"> Ir para sua dieta </button></a>
+			</div>
+		</div>
+	</div>
+</main>

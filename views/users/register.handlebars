@@ -1,0 +1,96 @@
+{{#each errs}}
+	<div class="alert alert-danger">{{text}}</div>
+{{/each}}
+
+<style>
+    .container {
+        max-width: 960px;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select:
+            none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1),
+            inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill:
+            currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+</style>
+
+<div class="container">
+    <main>
+        <div class="py-4 text-center">
+            <h2>Cadastro de perfil</h2>
+        </div>
+        <div class="col-12 container">
+            <form class="needs-validation" action="/user/register/success" method="post">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Nome de usuário</label>
+                        <input type="text" name="username" class="form-control" id="firstName" placeholder="" value="">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email"
+                            placeholder="Ex.: r.solana@gmail.com">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="passwd" class="form-label">Crie uma nova senha</label>
+                        <input type="password" name="passwd" class="form-control" id="passwd" placeholder="" value="">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="passwd2" class="form-label">Repita sua senha</label>
+                        <input type="password" name="passwd2" class="form-control" id="passwd2">
+                    </div>
+                    <button class="btn btn-primary" type="submit"> Criar conta</button>
+
+                </div>
+            </form>

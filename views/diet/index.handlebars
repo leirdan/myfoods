@@ -1,0 +1,64 @@
+<section class="py-3 text-center container">
+	<div class="row py-lg-2">
+		<div class="col-lg-6 col-md-8 mx-auto">
+			<h1>Sua dieta e horários</h1>
+			<p class="lead text-muted">Aqui você pode visualizar toda a sua dieta, adicionar opções de refeições a
+				certos horários e
+				modificá-los como quiser.
+			</p>
+			{{#if diet}}
+			<a href="/dieta/criar-dieta" class="btn btn-primary mb-3">Adicionar outro horário</a>
+			{{/if}}
+			{{#each diet}}
+			<div class="card mb-4">
+				<table class="table my-4 table-responsive">
+					<h4>{{this.name}}, {{this.hour}}:{{this.minutes}}</h4>
+					<thead class="table-dark">
+						<tr>
+							<th scope="col">Opções</th>
+							<th scope="col">Quantidades</th>
+						</tr>
+					</thead>
+					<tbody class="table-group-divider">
+						{{#each meals}}
+						<tr>
+							<td scope="col">{{name}}</td>
+							<td scope="col">{{amount}}</td>
+						</tr>
+						{{/each}}
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table table-responsive">
+					<thead class="table-active">
+						<tr>
+							<th scope="row"> Observações importantes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td scope="col">{{this.notes}} </td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-md-6 mb-2">
+						<a href="/dieta/editar/{{name}}"><button class="btn btn-success">Editar</button></a>
+					</div>
+					<div class="col-md-6 mb-2">
+						<a href="/dieta/deletar/{{name}}"><button class="btn btn-danger">Deletar</button></a>
+					</div>
+				</div>
+			</div>
+
+			{{else}}
+			<h3> Nenhuma dieta foi encontrada. Deseja começar a criar?</h3>
+			<p>
+				<a href="/dieta/criar-dieta" class="btn btn-primary my-2">Começar!</a>
+			</p>
+			{{/each}}
+
+		</div>
+	</div>
+</section>

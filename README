@@ -1,0 +1,9 @@
+aplicativo para hudson controlar seus horários e refeições.
+o que terá nele:
+-> cadastrar as refeições
+-> ver as refeições
+-> montar horários para comer, adicionando refeições
+-> operações básicas de banco de dados (CRUD)
+
+REVISÕES
+-> redimensionar o campo de defina o horario em diet/register
