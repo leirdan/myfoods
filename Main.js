@@ -47,7 +47,7 @@ mongoose
 	.catch((err) => {
 		console.log(`Algo deu errado: ${err}`);
 	});
-app.use("/index", (req, res) => {
+app.use("/", (req, res) => {
 	res.render("homepage");
 });
 app.use("/home", isLogged, (req, res) => {
