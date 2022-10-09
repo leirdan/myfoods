@@ -2,7 +2,7 @@
   "name": "myfoods",
   "version": "1.0.0",
   "description": "aplicativo para controlar seus horários e refeições.",
-  "main": "index.js",
+  "main": "Main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node Main.js"
