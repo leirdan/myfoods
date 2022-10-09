@@ -47,7 +47,10 @@ mongoose
 	.catch((err) => {
 		console.log(`Algo deu errado: ${err}`);
 	});
-app.use("/*", (req, res) => {
+app.use("/", (req, res) => {
+	res.redirect("/myfoods");
+});
+app.use("/myfoods", (req, res) => {
 	res.render("homepage");
 });
 app.use("/404", (req, res) => {

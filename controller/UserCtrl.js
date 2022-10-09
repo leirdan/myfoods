@@ -22,7 +22,7 @@ exports.logout = (req, res, next) => {
 			return next(err);
 		} else {
 			req.flash("success_msg", "Deslogado com sucesso.");
-			res.redirect("/index");
+			res.redirect("/myfoods");
 		}
 	});
 };
@@ -52,7 +52,7 @@ exports.create = (req, res) => {
 			.then((user) => {
 				if (user) {
 					req.flash("error_msg", "Já existe uma conta com esse e-mail. ");
-					res.redirect("/user/create");
+					res.redirect("/user/register");
 				} else {
 					const user = new UserSchema({
 						username: req.body.username,
@@ -63,7 +63,7 @@ exports.create = (req, res) => {
 						bCrypt.hash(user.passwd, salt, (err, hash) => {
 							if (err) {
 								req.flash("error_msg", `${err}`);
-								res.redirect("/user/create");
+								res.redirect("/user/register");
 							} else {
 								user.passwd = hash;
 								user.save()
