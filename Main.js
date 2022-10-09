@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const handlebars = require("express-handlebars");
-const dietRoutes = require("./Routes/diet_routes");
-const mealsRoutes = require("./Routes/meals_routes");
-const userRoutes = require("./Routes/user_routes");
+const dietRoutes = require(_dirname, "Routes/diet_routes");
+const mealsRoutes = require(_dirname, "Routes/meals_routes");
+const userRoutes = require(_dirname, "Routes/user_routes");
 const path = require("path");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
