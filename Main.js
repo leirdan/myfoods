@@ -37,7 +37,7 @@ app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "Public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 mongoose
 	.connect(database.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
