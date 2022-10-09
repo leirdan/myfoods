@@ -47,8 +47,11 @@ mongoose
 	.catch((err) => {
 		console.log(`Algo deu errado: ${err}`);
 	});
-app.use("/", (req, res) => {
+app.use("/index", (req, res) => {
 	res.render("homepage");
+});
+app.use("/404", (req, res) => {
+	res.send("Página não encontrada. :(");
 });
 app.use("/home", isLogged, (req, res) => {
 	const user = {
