@@ -9,4 +9,5 @@ router.post("/criar-dieta/sucesso", isLogged, DietCtrl.insert);
 router.get("/deletar/:name", isLogged, DietCtrl.delete);
 router.get("/editar/:name", isLogged, DietCtrl.edit);
 router.post("/editar/sucesso", isLogged, DietCtrl.alter);
+
 module.exports = router;

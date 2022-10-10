@@ -13,8 +13,10 @@ const passport = require("passport");
 require("./config/auth")(passport);
 const { isLogged } = require("./helpers/isLogged");
 const database = require("./config/databases");
+const cors = require("cors");
 
 // CONFIGURAÇÕES
+app.use(cors());
 app.use(
 	session({
 		secret: "havohejpantocrator",
@@ -48,9 +50,6 @@ mongoose
 		console.log(`Algo deu errado: ${err}`);
 	});
 app.use("/", (req, res) => {
-	res.redirect("/myfoods");
-});
-app.use("/myfoods", (req, res) => {
 	res.render("homepage");
 });
 app.use("/404", (req, res) => {

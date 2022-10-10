@@ -14,9 +14,10 @@
     "bcryptjs": "^2.4.3",
     "bootstrap-icons": "^1.9.1",
     "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
-    "express-session":"^1.17.3",
+    "express-session": "^1.17.3",
     "mongoose": "^6.6.2",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
