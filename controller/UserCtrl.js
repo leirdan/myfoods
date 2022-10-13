@@ -6,7 +6,7 @@ const passport = require("passport");
 
 // Mostrar tela de login
 exports.login = (req, res) => {
-	res.render("users/login");
+	res.render("../views/users/login");
 };
 // Entrar
 exports.enter = (req, res, next) => {
