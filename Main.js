@@ -17,7 +17,7 @@ const database = require("./config/databases");
 // CONFIGURAÇÕES
 app.use(
 	session({
-		secret: "havohejpantocrator",
+		secret: process.env.DB_SECRET,
 		resave: true,
 		saveUninitialized: true,
 	})
